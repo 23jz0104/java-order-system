@@ -145,71 +145,7 @@ public class CookServlet extends HttpServlet {
         return rd;
     }
 
-    /**
-     * 注文履歴をDBから取得しList<CartDTO>型でスコープにセットするメソッド
-     * 
-     * @param request
-     */
     private void setOrderHistory(HttpServletRequest request, int statusId) {
-
-        testSetOrderHistory(request, statusId);
-//        int              tableNumber;
-//        CartDAO          cartDAO        = new CartDAO();
-//        ProductDAO       productDAO     = new ProductDAO();
-//        CategoryDAO      categoryDAO    = new CategoryDAO();
-//        SizeDAO          sizeDAO        = new SizeDAO();
-//        OrderDAO         orderDAO       = new OrderDAO();
-//
-//        List<Cart>       cartList       = cartDAO.getAllByStatusId(statusId); //statusIdが1(調理中)のステータスを取得
-//        ProductDTO       productDTO;
-//        List<ProductDTO> productDTOList = new ArrayList<>();
-//
-//        for (Cart cart : cartList) {
-//
-//            Product  product  = productDAO.getProduct(cart.getProductId());
-//            Category category = categoryDAO.getCategory(product.getCategoryId());
-//            Size     size     = sizeDAO.getSize(cart.getSizeId());
-//            tableNumber = orderDAO.getTableNumber(cart.getOrderId());
-//            String formattedOrderDate = cart.getFormattedOrderDate(cart.getOrderTime());
-//            productDTO = new ProductDTO(product, category, size, cart, formattedOrderDate, tableNumber);
-//            productDTOList.add(productDTO);
-//        }
-//        request.setAttribute("productDTOList", productDTOList);
-    }
-
-    private void testSetOrderHistory(HttpServletRequest request, int statusId) {
-
-        testSetOrderHistory2(request, statusId);
-//        int                      tableNumber;
-//        CartDAO                  cartDAO        = new CartDAO();
-//        ProductDAO               productDAO     = new ProductDAO();
-//        CategoryDAO              categoryDAO    = new CategoryDAO();
-//        SizeDAO                  sizeDAO        = new SizeDAO();
-//        OrderDAO                 orderDAO       = new OrderDAO();
-//        StatusDAO                statusDAO      = new StatusDAO();
-//        EventDAO                 eventDAO       = new EventDAO();
-//
-//        Map<Integer, List<Cart>> cartMap        = cartDAO.getAllItemsByStatusId(statusId);
-//        List<ProductDTO>         productDTOList = new ArrayList<>();
-//
-//        for (Map.Entry<Integer, List<Cart>> entry : cartMap.entrySet()) {
-//            List<Cart> cartList = entry.getValue();
-//
-//            for (Cart cart : cartList) {
-//                Product  product  = productDAO.getProduct(cart.getProductId());
-//                Category category = categoryDAO.getCategory(product.getCategoryId());
-//                Size     size     = sizeDAO.getSize(cart.getSizeId());
-//                Status   status   = statusDAO.getStatusById(cart.getStatusId());
-//                tableNumber = orderDAO.getTableNumber(cart.getOrderId());
-//                String formattedOrderDate = cart.getFormattedOrderDate(cart.getOrderTime());
-//                productDTOList.add(new ProductDTO(product, category, size, cart, status, formattedOrderDate, tableNumber));
-//            }
-//        }
-//
-//        request.setAttribute("productDTOList", productDTOList);
-    }
-
-    private void testSetOrderHistory2(HttpServletRequest request, int statusId) {
         int                      tableNumber;
         CartDAO                  cartDAO        = new CartDAO();
         ProductDAO               productDAO     = new ProductDAO();
@@ -261,7 +197,7 @@ public class CookServlet extends HttpServlet {
     private void updateEventStatusComplete(HttpServletRequest request) {
         int eventId = Integer.parseInt(request.getParameter("eventId"));
         if (new EventDAO().updateEventStatus(eventId)) {
-            testSetOrderHistory2(request, 2);
+            setOrderHistory(request, 2);
         }
     }
 
