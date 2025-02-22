@@ -1,0 +1,520 @@
+@charset "UTF-8";
+
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+/* 全体設定  */
+
+body{
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  width: 1024px;
+  max-width: 1024px;
+  max-height: 768px;
+  border: solid 1px #5A3E36; /* ダークブラウン */
+  background-color: #FAF3E0; /* クリームホワイト */
+  color: #5A3E36; /* テキスト色をダークブラウンに */
+}
+ul,ol {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #D72638; /* ミートレッド */
+}
+
+a:hover{
+  opacity: .8;
+  color: #E85D04; /* グリルオレンジ */
+}
+
+em,span{
+  display: block;
+  font-style: normal;
+}
+
+.txt{
+  margin: 0;
+  padding: 0;
+}
+
+/* 汎用レイアウト */
+
+#auth_header{
+  border: solid 1px #5A3E36;
+  text-align: center;
+  background-color: #D72638; /* ミートレッド */
+  color: #FAF3E0;
+}
+
+#auth_header h1 {
+	margin:20px 0px ;
+}
+
+footer ul{
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  background-color: #556B2F; /* オリーブグリーン */
+}
+footer ul li {
+  flex: 1;
+  text-align: center;
+  border: solid 1px #FAF3E0; /* クリームホワイト */
+}
+footer ul li a{
+  display: block;
+  padding: 20px 0;
+  width: 100%;
+  height: 100%;
+  color: #FAF3E0;
+}
+
+/* ボタン */
+button {
+  background-color: #D72638;
+  color: #FAF3E0;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: none;
+}
+
+button:hover {
+  background-color: #E85D04;
+}
+
+.wrap{
+  display: flex;
+
+}
+
+/* 初期画面 */
+
+#init_footer {
+	border: solid 1px #222;
+    text-align: center;
+}
+
+#init img,
+#init button{
+	display: block;
+    margin: 0 auto;
+}
+
+#init img {
+	height: 450px;
+}
+
+#init button {
+	width: 200px;
+	padding: 20px;
+/*    background: #dc3;*/
+    border-radius: 20px;
+    margin: 30px auto 57px auto;
+    
+}
+
+/* 注文画面ページ */
+
+.wrap .menu{
+  min-width: 750px;
+}
+.wrap .menuber{
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
+  margin:0 0 20px 0;
+}
+.wrap .menuber li{
+  flex: 1;
+  text-align: center;
+  border: solid 1px #555;
+}
+.wrap .menuber li a{
+  display: block;
+  padding: 20px 0;
+  width: 100%;
+  height: 100%;
+}
+.wrap .menus {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: start;
+  align-items: start;
+  padding: 0 75px;
+  margin: 60px 0;
+  width: 750px;
+  min-height: 400px;
+}
+.wrap .menus .menu_item {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  background-color: #FAF3E0;
+  border: solid 1px #5A3E36;
+}
+ .menu_img {
+	 width: 198.4px;
+	 margin: 0px;
+}
+ .menu_item a {
+	font-size: 0.75em;
+}
+ .menu_img  img {
+	width: 100%;
+    height: 110px;
+}
+ .menu_item p {
+	 margin: 10px;
+ }
+ 
+.preview{
+  display: flex;
+  justify-content: center;
+  gap: 0 60px;
+  margin: 20px 0;
+}
+.preview .now_page{
+  margin: 0;
+  padding: 10px 20px;
+  border: solid 1px #555;
+  border-radius: 20px;
+}
+.preview .previewbtn{
+  width: 100px;
+  margin: 0;
+  padding: 10px 20px;
+}
+.back{
+  text-align: right;
+  border: solid 1px #555;
+  border-radius: 100% 0 0 100%;
+}
+.next{
+  text-align: left;
+  border: solid 1px #555;
+  border-radius: 0 100% 100% 0;
+}
+
+.cart {
+  margin-left: auto;
+  border: solid 2px #5A3E36;
+  background-color: #FAF3E0;
+  margin: 0;
+  width: 366px;
+}
+.cart ul{
+  overflow-y: scroll;
+  height: 510px;
+  padding: 0;
+  margin: 0;
+  border: solid 1px #555;
+}
+.cart .item{
+  padding: 10px;
+  border: solid 1px;
+}
+.cart .item .a{
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  gap: 0 20px;
+}
+.cart .item .cartbtn{
+  justify-content: center;
+}
+.cart .ttl{
+  margin: 0;
+  padding: 30px 0;
+  text-align: center;
+  border: solid 1px #5A3E36;
+  background-color: #D72638;
+  color: #FAF3E0;
+
+}
+.cart .order_btn{
+  padding-top: 5px;
+  height: 90px;
+  border: solid 1px #5A3E36;
+  background-color: #D72638;
+  color: #FAF3E0;
+}
+.cart .order_btn span,
+.cart .order_btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart .order_btn button {
+  background-color: #FAF3E0;
+  color: #D72638;
+  padding: 15px;
+  border-radius: 50px;
+  margin: auto;
+}
+.cart .order_btn button:hover {
+  background-color: #E85D04;
+}
+
+/* 商品詳細 */
+
+.wrap .txt {
+	margin: 50px 20px;
+	width: 400px;
+}
+
+.wrap .txt h2{
+	text-align: center;
+	margin: 20px 0 20px 0;
+}
+
+.wrap .txt .desc{
+	word-wrap: normal;
+	height: 230px;
+	padding: 10px;
+	border: solid 1px;
+}
+
+.wrap .info_img {
+	margin: 60px 10px;
+	height: 300px;
+}
+
+.wrap .info_img img {
+	width: 100%;
+	height: 100%;
+}
+
+.add_form {
+	display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0 30px 0;
+}
+.add_btn {
+	width: 200px;
+	height: 50px;
+	border-radius: 50px;
+}
+
+/* 注文履歴 */
+
+.order_history{
+	overflow-y: scroll;
+	height: 450px;
+	margin: 0;
+	padding: 20px;
+	border: solid 1px;
+}
+.total {
+	display: block;
+	text-align: center;
+	margin: 20px auto;
+	width: 400px;
+}
+
+.back_btn {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+    width: 200px;
+    height: 45px;
+    border: solid 1px;
+    border-radius: 50px;
+    margin: 20px auto;
+}
+
+/* サービス一覧 */
+#services {
+	margin: 30px;
+	height: 540px;
+	max-height: 540px;
+}
+
+.service_btn {
+	display: flex;
+	justify-content: start;
+	align-items: start;
+	height: 450px;
+}
+
+/* 呼び出し画面 */
+#call {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 667px;
+	gap: 100px;
+}
+
+/*会計画面*/
+
+#payment {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 598px;
+}
+
+#payment h2 {
+	margin: 100px 0 100px 0;
+}
+
+#payment em {
+	margin-bottom: 70px;
+}
+
+#payment button {
+	width: 300px;
+	height: 100px;
+	border-radius: 50px;
+	background-color: #D72638;
+    color: #FAF3E0;
+}
+
+#payment button:hover {
+  background-color: #E85D04;
+}
+
+.checkout {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 768px;
+	gap: 200px;
+}
+
+/* 従業員用(キッチン・ホール) */
+#employee {
+    height: auto;  /* 高さを自動にして、内容に合わせる */
+    height: 698px;
+    max-height: 698px;
+    border: solid 1px;
+}
+#employee p {
+	text-align: center;
+}
+
+.employee_header ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.employee_header ul li {
+    flex: 1;
+    text-align: center;
+    border: solid 1px #555;
+}
+
+.employee_header ul li a {
+    display: block;
+    padding: 20px 0;
+    width: 100%;
+    height: 100%;
+}
+
+.scroll {
+	height: 700px;
+	max-height: 690px;
+	overflow-y: scroll; /* スクロールの設定 */
+	width: 100%;
+}
+
+.task_list {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* これを優先 */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.task_list table {
+    width: 100%;
+    table-layout: fixed; /* ここも fixed に統一 */
+    display: block;
+}
+.task_list thead {
+	position:sticky;
+	top:0;
+	border: solid 1px;
+	background: #fff;
+}
+
+.task_list tbody {
+    width: 100%;
+    height: 30px;
+}
+
+.task_list th, .task_list td {
+    width: 100px; /* 適当な固定幅を設定 */
+    min-width: 100px;
+    max-width: 100px;
+    height: 50px;
+}
+
+/* 配送情報用のカラム */
+.delivery {
+    width: 60%;
+    height: 697px;
+    max-height: 697px;
+    border: solid 1px;
+}
+
+/* コール情報用のカラム */
+.call {
+    width: 40%;
+    height: 697px;
+    max-height: 697px;
+    border: solid 1px;
+}
+.call_scroll {
+	overflow-y: scroll;
+    height: 625px;
+    max-height: 625px;
+}
+/* 決済画面 */
+#pay {
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+#pay form {
+	display: flex;
+	flex-direction: column;
+	gap: 100px;
+}
+#pay form .btn {
+	height: 60px;
+	border-radius: 50px;
+}
+.pay_scroll {
+	overflow-y: scroll;
+	height: 400px;
+}
+.order_data thead {
+	position:sticky;
+	top:0;
+	background: #fff;
+}
+.btn{
+	height: 60px;
+	width: 200px;
+	border-radius: 50px;
+}
