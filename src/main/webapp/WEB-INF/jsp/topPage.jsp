@@ -15,7 +15,9 @@
 		<!-- カテゴリ一覧を表示 -->
 	    <ul class="menuber">
 		<c:forEach var="category" items="${categoryList}">
-			<li><a href="OrderServlet?type=topPage&categoryId=${category.id}">${category.name}</a></li>
+    		<li class="<c:if test='${categoryId eq category.id}'>current-category</c:if>">
+        		<a href="OrderServlet?type=topPage&categoryId=${category.id}">${category.name}</a>
+    		</li>
 		</c:forEach>
 		</ul>
 		

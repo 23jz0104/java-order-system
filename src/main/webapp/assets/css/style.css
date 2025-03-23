@@ -122,6 +122,12 @@ button:hover {
 
 /* 注文画面ページ */
 
+.current-category{
+	background-color: #556B2F; /* オリーブグリーン */
+}
+.current-category a {
+	color: #FAF3E0; /* クリームホワイト */
+}
 .wrap .menu{
   min-width: 750px;
 }

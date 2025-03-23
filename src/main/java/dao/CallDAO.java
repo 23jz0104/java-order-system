@@ -54,7 +54,7 @@ public class CallDAO {
      * @return
      */
     public Call getLastCallsByTableNumber(int tableNumber) {
-        String sql = "String sql = \"SELECT * FROM calls WHERE table_number = ? ORDER BY id DESC LIMIT 1 ROWS ONLY";
+        String sql = "SELECT * FROM calls WHERE table_number = ? ORDER BY id DESC LIMIT 1";
         try (Connection con = DBManager.getInstance().getConnection();
                 PreparedStatement stmt = con.prepareStatement(sql)) {
             stmt.setInt(1, tableNumber);
